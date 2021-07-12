@@ -1,16 +1,11 @@
 <header>
-	{{ strings.Repeat ( .Site.Title | len | add 6 ) "=" }}<br>
-	== <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> ==<br>
-	{{ strings.Repeat ( .Site.Title | len | add 6 ) "=" }}
-	<div style="float: right;">{{ .Site.Params.subtitle }}</div><br>
-	<p>
+	<a href="{{ .Site.BaseURL }}"><h1 class='fancytext'>{{ .Site.Title }}</h1></a>
+	<div class='subtitle'>{{ .Site.Params.subtitle }}</div>
 	<nav>
-			<a href="/"><b>Start</b></a>.
 			{{ with .Site.Menus.main }}
 			{{ range . }}
-			<a href="{{ .URL | relURL }}"><b>{{ .Name }}</b></a>.
+			<a class='navlink' href="{{ .URL | relURL }}">{{ .Name }}</a>
 			{{ end }}
 	</nav>
-	</p>
 	{{ end }}
 </header>
